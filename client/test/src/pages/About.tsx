@@ -48,7 +48,7 @@ export default function About() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-10 bg-gray-900 min-h-screen">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
         <img
           src="https://via.placeholder.com/200"
