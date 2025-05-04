@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, imageUrl, link }) => {
                 max: 10,
                 speed: 50,
                 glare: true,
-                "max-glare": 0.9,
+                "max-glare": 0.15,
                 transition: false,
                 easing: "cubic-bezier(.03,.98,.52,.99)",
                 inverted: true

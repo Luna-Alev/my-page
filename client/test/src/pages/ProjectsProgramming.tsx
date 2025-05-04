@@ -36,7 +36,7 @@ const projects = [
 
 const ProjectsArt: React.FC = () => {
   return (
-    <div className="bg-gray-900 min-h-screen max-w-6xl text-white p-8">
+    <div className="bg-gray-900 min-h-screen text-white p-8">
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((project) => (

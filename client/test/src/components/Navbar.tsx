@@ -1,9 +1,10 @@
+// @ts-ignore
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white p-4 shadow-md">
-    <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <div className="max-w-8xl mx-auto flex items-center justify-between">
       <div className="text-xl font-bold">
         <Link to="/">MyLogo</Link>
       </div>

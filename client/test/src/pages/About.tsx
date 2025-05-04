@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 
 const images = [
-  "https://via.placeholder.com/600x400?text=1",
-  "https://via.placeholder.com/600x400?text=2",
-  "https://via.placeholder.com/600x400?text=3",
-  "https://via.placeholder.com/600x400?text=4",
-  "https://via.placeholder.com/600x400?text=5",
+  "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+  "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+  "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+  "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+  "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
 ];
 
 export default function About() {
@@ -16,7 +16,6 @@ export default function About() {
     return (
       <div className="relative flex justify-center mt-10 space-x-[-100px] overflow-visible">
         {images.map((img, index) => {
-          const position = index - current;
           const scale = index === current ? "scale-100 z-30" : "scale-75 z-20 opacity-60";
 
           return (
@@ -48,10 +47,10 @@ export default function About() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 bg-gray-900 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 py-10 bg-gray-900 min-h-screen">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
         <img
-          src="https://via.placeholder.com/200"
+          src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM="
           alt="Profile"
           className="w-48 h-48 rounded-full object-cover shadow-md"
         />

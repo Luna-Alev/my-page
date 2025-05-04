@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 import Navbar from './components/Navbar'
@@ -9,10 +9,10 @@ import ProjectsProgramming from "./pages/ProjectsProgramming";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <Navbar />
-        <div className="container mx-auto px-4 py-10 max-w-6xl">
+        <div className="container mx-auto px-4 py-10 max-w-7xl">
           <Routes>
             <Route path="/" element={<h1 className="text-3xl text-gray-300 text-center">Welcome to My Portfolio</h1>} />
             <Route path="/about" element={<About />} />
@@ -21,7 +21,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 

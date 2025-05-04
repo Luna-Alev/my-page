@@ -5,38 +5,38 @@ const projects = [
   {
     id: 1,
     title: "Project One",
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
     link: "/projects/one",
   },
   {
     id: 2,
     title: "Project Two",
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
     link: "/projects/two",
   },
   {
     id: 3,
     title: "Project Three",
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
     link: "/projects/three",
   },
   {
     id: 4,
     title: "Project Four",
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
     link: "/projects/four",
   },
   {
     id: 4,
     title: "Project Five",
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
     link: "/projects/four"
   }
 ];
 
 const ProjectsArt: React.FC = () => {
   return (
-    <div className="bg-gray-900 min-h-screen max-w-6xl text-white p-8">
+    <div className="bg-gray-900 min-h-screen text-white p-8">
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((project) => (
