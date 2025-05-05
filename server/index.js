@@ -2,9 +2,15 @@ const express = require('express');
 const db = require('./utils/db');
 const app = express();
 
+const cors = require('cors');
+app.use(cors());
+
 require('dotenv').config();
 
 const cloudinary = require('cloudinary');
+
+app.use(express.json());
+app.use('/', require('./routes'));
 
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
@@ -28,5 +34,5 @@ const upload = async () => {
 //upload() //test cloudinary connection
 
 app.listen(3000, () => {
-    console.log('Server is running at port 3000');
+    console.log('Server is running on port 3000');
 });

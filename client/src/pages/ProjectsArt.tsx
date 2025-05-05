@@ -1,40 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
+import axios from "axios";
 
-const projects = [
-  {
-    id: 1,
-    title: "Project One",
-    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-    link: "/projects/one",
-  },
-  {
-    id: 2,
-    title: "Project Two",
-    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-    link: "/projects/two",
-  },
-  {
-    id: 3,
-    title: "Project Three",
-    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-    link: "/projects/three",
-  },
-  {
-    id: 4,
-    title: "Project Four",
-    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-    link: "/projects/four",
-  },
-  {
-    id: 4,
-    title: "Project Five",
-    imageUrl: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-    link: "/projects/four"
-  }
-];
+type Project = {
+  id: number;
+  title: string;
+  imageUrl: string;
+};
+
+const slugify = (title: string): string => {
+  return title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '') // remove non-alphanumeric chars
+    .replace(/\s+/g, '-')         // replace spaces with hyphens
+    .replace(/-+/g, '-');         // collapse multiple hyphens
+};
 
 const ProjectsArt: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        console.log('fetching')
+        const response = await axios.get('http://localhost:3000/project', {
+          params: { category: 1 }
+        });
+        console.log(response.data);
+        if (Array.isArray(response.data)) {
+          const formattedProjects = response.data.map((project) => ({
+            id: project.Id,
+            title: project.Title,
+            imageUrl: project.Url,
+          }));
+
+          setProjects(formattedProjects);
+        } else {
+          console.error("Invalid data format:", response.data);
+        }
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          console.error("Axios error:", error.response?.data, error.message);
+        } else {
+          console.error("Unknown error:", error);
+        }
+      }
+    };
+  
+    fetchProjects();
+  }, []);
+
   return (
     <div className="bg-gray-900 min-h-screen text-white p-8">
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
@@ -44,7 +60,7 @@ const ProjectsArt: React.FC = () => {
             key={project.id}
             title={project.title}
             imageUrl={project.imageUrl}
-            link={project.link}
+            link={slugify(project.title)}
           />
         ))}
       </div>
